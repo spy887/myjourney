@@ -1,0 +1,48 @@
+Selection Sort
+
+#include<stdio.h>
+#include<stdlib.h>
+void selectionsort(int a[],int n)
+{
+    int i,min,j,temp;
+    for(i=0;i<n-1;i++)
+    {
+        min=i;
+        for(j=i+1;j<n;j++)
+        {
+            if(a[min]>a[j])
+            {
+                min=j;
+            }
+            
+        }
+        if(min!=i)
+        {
+            temp=a[min];
+            a[min]=a[i];
+            a[i]=temp;
+        }
+    }
+}
+int main()
+{
+    int i,n,a[20];
+    scanf("%d",&n);
+        for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("\nUnsorted List\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d\t",a[i]);
+    }
+    selectionsort(a,n);
+    printf("\nSELECTION SORT");
+    printf("\nSorted List\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d\t",a[i]);
+    }
+    
+}
